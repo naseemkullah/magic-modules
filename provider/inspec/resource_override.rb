@@ -35,7 +35,6 @@ module Provider
         super
         check :additional_functions, type: String, required: false
       end
-
     end
 
     # Product specific overriden properties for inspec
