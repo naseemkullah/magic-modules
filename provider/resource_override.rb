@@ -39,9 +39,7 @@ module Provider
     def validate
       super
 
-      @properties ||= {}
-
-      check_property :properties, Hash
+      check :properties, type: Hash, default: {}
     end
 
     private

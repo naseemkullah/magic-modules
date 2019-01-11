@@ -35,8 +35,8 @@ module Provider
       def validate
         super
 
-        check_optional_property :aliases, ::Array
-        check_optional_property :version_added, ::String
+        check :aliases, type: ::Array, required: false
+        check :version_added, type: ::String, required: false
       end
     end
 

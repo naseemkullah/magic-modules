@@ -31,16 +31,11 @@ module Provider
     # Shared code between new resource overrides and old overrides
     module ResourceOverrideSharedCode
       def validate
-        assign_defaults
-
+        check :manual, type: :boolean, default: false
         super
-        check_property :manual, :boolean
-        check_optional_property :additional_functions, String
+        check :additional_functions, type: String, required: false
       end
 
-      def assign_defaults
-        default_value_property :manual, false
-      end
     end
 
     # Product specific overriden properties for inspec

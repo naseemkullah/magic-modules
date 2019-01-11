@@ -39,8 +39,8 @@ module Provider
 
       def validate
         super
-        check_optional_property :compile, Hash
-        check_optional_property :copy, Hash
+        check :compile, type: Hash, required: false
+        check :copy, type: Hash, required: false
       end
     end
 
@@ -88,9 +88,9 @@ module Provider
 
       overrides
 
-      check_optional_property :files, Provider::Config::Files
-      check_property :overrides, [Provider::ResourceOverrides,
-                                  Provider::Overrides::ResourceOverrides]
+      check :files, type: Provider::Config::Files, required: false
+      check :overrides, type: [Provider::ResourceOverrides,
+                               Provider::Overrides::ResourceOverrides]
     end
 
     # Provides the API object to any type that requires, e.g. for validation

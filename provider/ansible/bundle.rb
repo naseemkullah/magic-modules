@@ -30,7 +30,7 @@ module Provider
       end
 
       def validate
-        check_property :manifest, Provider::AnsibleBundle::Manifest
+        check :manifest, type: Provider::AnsibleBundle::Manifest
       end
     end
 
