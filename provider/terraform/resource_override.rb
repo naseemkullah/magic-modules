@@ -50,7 +50,7 @@ module Provider
         @examples ||= []
 
         check :id_format, type: String, default: '{{name}}'
-        check :examples, Provider::Terraform::Examples, type: Array, default: []
+        check :examples, list_type: Provider::Terraform::Examples, type: Array, default: []
 
         check :custom_code, type: Provider::Terraform::CustomCode, default: Provider::Terraform::CustomCode.new
         check :docs, type: Provider::Terraform::Docs, default: Provider::Terraform::Docs.new
